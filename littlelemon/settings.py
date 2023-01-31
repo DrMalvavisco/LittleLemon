@@ -78,7 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': BASE_DIR/'my.cnf',
+            'read_default_file': str(BASE_DIR / 'my.cnf'),
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
